@@ -1,0 +1,9 @@
+* {
+	cursor: none; 
+	overflow: hidden; /* gets rid of scrollbars */
+}
+
+body {    
+    margin: 0;
+    padding: 0;
+}
