@@ -1,1 +1,0 @@
-# 19smitgr.github.io
