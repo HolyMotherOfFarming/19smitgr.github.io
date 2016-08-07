@@ -25,7 +25,7 @@ class Ball {
         this.ctx.beginPath();
         this.ctx.arc(X, Y, this.radius, 0, 2 * Math.PI);
         this.ctx.fillStyle = this.color;
-        this.ctx.fill();
+        // this.ctx.fill();
         this.ctx.stroke();
     }
 }
