@@ -1,0 +1,35 @@
+<html>
+<head>
+    <title> 1.1.7 JS Game by Zach and Garrett.</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body onkeydown = "keydown(event);">
+
+<div id="gloss" class="center">
+    <div class="vertical"><strong>Instructions: The goal is to get to the top platform, complete 3 levels and you win! Use the arrow keys or WASD to move</strong></div><br>
+    <div id="play" class="btn noselect">PLAY</div>
+    <div class="vertical"><strong>This is a game made for 1.1.7 made by Zachary Taylor and Garrett Smith</strong></div>
+</div>
+
+<div class="center">
+    <div id="grid"></div>
+</div>
+
+<div class="center">
+    <div class="btn" onclick = "AUTOJUMP=!AUTOJUMP;">
+        Fall Automatically
+    </div>
+    <div class="btn" onclick = "alert('The goal is to get to the top platform, complete 3 levels and you win! Use the arrow keys or WASD to move')">
+        Instructions
+    </div>
+    <div class="btn" onclick = "alert('This is a game made for 1.1.7 made by Zachary Taylor and Garrett Smith.')">
+        Credits and Authors.
+    </div>
+</div>
+
+<script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
+<script src="js/main.js"></script>
+<script src="js/window.js"></script>
+</body>
+</html>
+
