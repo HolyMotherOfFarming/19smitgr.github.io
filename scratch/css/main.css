@@ -83,7 +83,10 @@ body {
 }
 
 #play {
+    display: block;
     position: relative;
+    top: 35%;
+    width: 3em;
     font-size: 2em;
     text-shadow: 2px 2px 2px #000;
     letter-spacing: 1px;
