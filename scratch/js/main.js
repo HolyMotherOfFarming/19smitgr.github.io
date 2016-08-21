@@ -237,7 +237,6 @@ function nextLevel() {
     {
         document.getElementById("gridContainer").innerHTML = "<h1 class=\"center big\">You Win!!</h1><br><div class=\"btn\" id = \"playagain\">Play again?</div>"; // clear page
         document.getElementsByTagName("body")[0].style.backgroundImage="url(http://www.rabbisacks.org/wp-content/uploads/2012/04/heaven.jpg)";
-        window.clearInterval(theInterval);
         document.getElementById("playagain").onclick = function() {
 
             level = 1;
