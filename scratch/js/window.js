@@ -9,7 +9,7 @@ function setSize() // make glossy front page responsive
     gloss.style.top = gloss.style.height * .25 + "px";
 }
 
-gloss.addEventListener("resize", setSize(), false);
+gloss.addEventListener("resize", setSize, false);
 window.addEventListener("keydown", function(e) {
     // space and arrow keys
     if([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
