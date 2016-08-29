@@ -3,7 +3,7 @@
  * Copyright 2013-2016 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
- 
+
 body {
   font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   overflow-x: hidden;
@@ -39,7 +39,7 @@ hr.star-primary {
   border-top: solid 5px;
   text-align: center;
   max-width: 250px;
-  margin: 25px auto 30px;
+  /*margin: 25px auto 30px;*/
 }
 hr.star-light:after,
 hr.star-primary:after {
