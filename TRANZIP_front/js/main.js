@@ -23,7 +23,7 @@
             $('#myModal').modal('toggle');
         }
     });
-    $('#search_button').bind('click', function(e) {
+    $('#searchButton').bind('click', function(e) {
         e.preventDefault();
         $('#myModal').modal('toggle');
     });
