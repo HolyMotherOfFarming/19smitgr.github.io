@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="stylesheet.css">
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta charset="utf-8">
+        <title>Tranzip</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <script src="htts://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    </head>
+    <style>
+        body  {
+    background-image: url("Background.png");
+    background-size: 100%;
+    /*background-repeat: no-repeat;*/
+    height: 100%;
+}
+        
+        
+    </style>
+
+    <body>
+
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-5 col-xs-12">
+                
+                    <img src="Tranzip Logo2.png" style="width:100%;">
+            </div> <!-- col-lg-4 col-md-6 col-sm-4 col-xs-12 -->
+            
+        <div class="row hidden-xs" style="margin-top: -130px;">  <!-- Hiding it from Mobile -->
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()"><img src="menu.png" style="width: 100px; float: right; margin: 10px 30px 0 300px; padding-bottom: 25px;"></span>
+        </div>  <!-- Hiding it from Mobile -->
+        
+        <div class="row hidden-lg hidden-md hidden-sm" style="margin-left: 135px;">  <!-- Hiding it from Large Screen -->
+             <span style="font-size:30px;cursor:pointer" onclick="openNav()"><img src="menu.png" style="width: 100px; height: 100px;"></span>
+        </div> <!-- Hiding it from Mobile -->
+        
+                <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                
+                <!--<form action="results.html" style="margin-left:-10px;">
+                    <h2 align="center" style="white-space:nowrap; overflow:hidden;">Admin Login</h2>
+                    <center>Username:</center>
+                    <center><input type="text" name="username" value="Username..." style="height:30px;"></center>
+                    <br>
+                    <center>Password:</center>
+                    <center><input type="password" name="password" value="Password..."></center>
+                    <br>
+                    <center><input type="Submit" value="Submit" style="margin-left:0px;height:40px;width:90px;border-radius:30px;border: 2px solid black;"></center>
+            </form><-->                                <!-- Old Form using Html-->
+                
+            <div class="container">                 <!-- New Form with Bootstrap-->
+                  <h2>Admin Login</h2>
+                <form>
+                    <div class="form-group">
+                  <label for="email">Username</label>
+                  <input type="text" class="form-control" id="email" style="width:90%;" placeholder="Enter Username">
+                    </div>  <!-- form-group -->
+                    <div class="form-group">
+                  <label for="pwd">Password:</label>
+                  <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+                    </div>
+                    <div class="checkbox">
+                      <label><input type="checkbox"> Remember me</label>
+                    </div>
+                        <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+            </div>  <!-- Container -->
+
+
+                </div>      <!-- mySidenav -->
+        </div>      <!-- Row -->
+    <div class="container">    
+        <div class="row">
+            <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-12" style="background: linear-gradient(90deg, white, gray); border: 5px solid #ff9435; display: inline-block; float: none; border-radius: 20px;">
+           <div class="col-lg-4 col-lg-offset-4 col-xs-6 col-xs-offset-3">
+               <img src="Bus1.png" style="height: 100%; width: 100%; display: inline-block;">
+                </div>
+                
+                <br>
+                <br>
+                <br>
+                <br>                    <center><h2>Welcome To Tranzip!</h2></center>
+                    <p align="center" style="padding-left: 10px; padding-right: 10px; font-size: 20px">Here you can search what bus you or your child rides based on your address, zip code, and school. Want to know more go to <a href="about.html">here</a>.
+                    </p>
+           
+            </div>      <!-- col-lg-12 col-md-8 col-sm-6 col-xs-4 -->
+        </div>      <!-- Row -->
+    </div>    <!-- container -->
+        <br>
+        
+        <div class="row">
+            <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-12" style="background: linear-gradient(90deg, white, gray); border: 5px solid #ff9435; border-radius: 20px;">
+                <p align="center" style="font-weight: bold;">Address</p>
+                <center><form>
+                    <input type="text" placeholder="Enter Address" style="width: 90%; border: 2px solid black;border-radius: 10px; height: 30px; margin-top: 10px; text-align: center; font-size: 20px;">
+                </form></center>
+                <p align="center" style="font-weight: bold;">School and Time</p>
+                
+                <!--<select name="schools" style="width: 275px; height: 30px; border-radius: 10px; border: 2px solid black; margin-left: 10%;font-size: 20px; font-family: Georgia;">-->
+                    
+                <!--    <option value="William Blount">William Blount</option>-->
+                <!--    <option value="Carpenters Middle">Carpenters Middle</option>-->
+                <!--    <option value="Fairview Elementary">Friendsville Elementary</option>-->
+                <!--    <option value="Union Grove Middle">Union Grove Middle</option>-->
+                <!--    <option value="Lanier Elementary">Lanier Elementary</option>-->
+                    
+                <!--</select>-->
+                
+                <div class="row hidden-lg hidden-md" style="margin: 15px 15px 0px 0px;">
+                    
+                    <select name="schools" style="width: 275px; height: 30px; border-radius: 10px; border: 2px solid black; margin-left: 10%;font-size: 20px; font-family: Georgia;">
+                    
+                    <option value="Select School">Select School</option>
+                    <option value="William Blount">William Blount</option>
+                    <option value="Carpenters Middle">Carpenters Middle</option>
+                    <option value="Fairview Elementary">Friendsville Elementary</option>
+                    <option value="Union Grove Middle">Union Grove Middle</option>
+                    <option value="Lanier Elementary">Lanier Elementary</option>
+                    
+                    </select><!-- schools --> 
+                
+                <center><select name="time" style="height: 30px; border-radius: 10px; border: 2px solid black; margin-left: 10%; font-size: 20px; font-family: Georgia">
+                    <option value="Select Time">Select Time</option>
+                   <option value="Morning and Afternoon">Morning and Afternoon</option>
+                    <option value="Morning">Morning</option>
+                    <option value="Afternoon">Afternoon</option>
+                </select></center>
+
+                </div>  <!-- row hidden-lg -->
+                
+                <div class="row hidden-xs"> <!-- Hides from Mobile -->
+                    
+                    <select name="schools" style="width: 275px; height: 30px; border-radius: 10px; border: 2px solid black; margin-left: 10%;font-size: 20px; font-family: Georgia;">
+                    
+                    <option value="Select School">Select School</option> 
+                    <option value="William Blount">William Blount</option>
+                    <option value="Carpenters Middle">Carpenters Middle</option>
+                    <option value="Fairview Elementary">Friendsville Elementary</option>
+                    <option value="Union Grove Middle">Union Grove Middle</option>
+                    <option value="Lanier Elementary">Lanier Elementary</option>
+                    
+                    </select>
+              
+               <select name="time" style="height: 30px; border-radius: 10px; border: 2px solid black; margin-left: 10%; font-size: 20px; font-family: Georgia">
+                    <option value="Select Time">Select Time</option>
+                   <option value="Morning and Afternoon">Morning and Afternoon</option>
+                    <option value="Morning">Morning</option>
+                    <option value="Afternoon">Afternoon</option>
+                </select>
+
+                </div> <!-- row hidden-xs -->
+                
+                <p align="center" style="font-weight: bold">Zip Code</p>
+                    <input type="text" class="col-lg-4 col-lg-offset-4 col-xs-6 col-xs-offset-3" placeholder="Enter Zip Code" style="border-radius: 10px;border: 2px solid black; text-align: center;">
+                    <br>
+                    <input type="Submit" value="Submit" placeholder="Enter Zip Code" class="col-lg-4 col-lg-offset-4 col-xs-4 col-xs-offset-4" style="margin-top: 10px;border-radius: 10px;border: 2px solid black;">     <!-- search -->
+            </div>      <!-- col-lg-6 col-lg-offset-3 col-md-8 col-sm-6 col-xs-12 -->
+        </div>      <!-- row -->
+        <br>
+        <br>
+        <br>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script>
+            function openNav() {
+                document.getElementById("mySidenav").style.width = "250px" ;
+                document.getElementById("mySidenav").style.border = "2px solid #ff944d" ;
+            }
+            function closeNav() {
+                document.getElementById("mySidenav").style.width = "0" ;
+                document.getElementById("mySidenav").style.border = "none" ;
+            }
+            
+        </script>
+    </body>
+</html>
