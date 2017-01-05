@@ -1,0 +1,878 @@
+$break-small: 992px;
+$primarycolor: #ff3850;
+$secondarycolor: #4285f4;
+$tertiarycolor: #35c54a;
+$darkcolor: #222;
+$mediumcolor: #aaa;
+$lightcolor: #ddd;
+
+$size: 70px;
+$radius: $size * 0.845;
+$glow: $size * 0.125;
+
+
+/* ==========================================================================
+   Base Styles, Bootstrap Modifications & Fonts Import
+   ========================================================================== */
+
+html,
+button,
+input,
+select,
+textarea {
+  color: #222;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+.centered {
+  text-align: center;
+}
+
+
+/* ==========================================================================
+   General styles
+   ========================================================================== */
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #000;
+
+  -webkit-font-smoothing: antialiased;
+  -webkit-overflow-scrolling: touch;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: sans-serif;
+  font-weight: 400;
+}
+
+/* ==========================================================================
+   MENU CONFIGURATION
+   ========================================================================== */
+
+$navicon-size : 7rem;
+
+.tupperware{
+  width: 185px;
+}
+
+@mixin line {
+  right: 0;
+  display: inline-block;
+  width: $navicon-size;
+  height: $navicon-size/7;
+  background-color: $primarycolor;
+  user-select: none;
+  border-radius: $navicon-size/14;
+  transition: .75s;
+}
+
+.navbar{
+  z-index: 10;
+  border: none;
+  border-radius: 0;
+  min-height: 90px;
+  background-color: transparent;
+}
+
+.navicon-button {
+  display: inline-block;
+  position: absolute;
+  padding: $navicon-size/2.45 $navicon-size/50;
+  transition: .75s;
+  cursor: pointer;
+  background: transparent;
+  top: $navicon-size/25;
+  right: $navicon-size*3.1;
+
+  &:hover {
+
+    .navicon:before { top: -($navicon-size/3.5); }
+    .navicon:after { top: $navicon-size/3.5; }}}
+
+.navicon {
+  @include line;
+  position: relative;
+  //top: $navicon-size/14;
+  //right: $navicon-size/2;
+
+  &:before, &:after {
+    @include line;
+    position: absolute;
+    content: '';
+    transform-origin: 88% center;
+  }
+  &:before { top: -($navicon-size/3.25); background-color: $secondarycolor; }
+  &:after { top: $navicon-size/3.25; background-color: $tertiarycolor; }
+}
+
+
+.open.navicon-button {
+  transform: scale3d(.85,.85,.85);
+
+  .navicon:before, .navicon:after {
+    top: 0;
+    right: 0;
+    width: $navicon-size/1.8;
+  }
+
+  .navicon:before { transform: rotate3d(0,0,1,-35deg); }
+  .navicon:after { transform: rotate3d(0,0,1,35deg); }
+}
+
+.navbar-default{
+  border-radius: 0;
+}
+
+.menu {
+  position: fixed;
+  right: -200px;
+  width: 200px;
+  height: 100%;
+  top: 0;
+  z-index: 15;
+  text-align: left;
+}
+
+.menu.menu-open {
+  right: 0;
+  z-index: 15;
+}
+
+.menu-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(90deg, white, gray);
+  width: 200px;
+  height: 100%;
+}
+
+.menu h1.logo a:hover {
+  color: $primarycolor;
+}
+
+.menu img.logo {
+  margin: 20px 0;
+  max-width: 160px;
+}
+
+.menu h1 {
+  margin-left: 20px;
+  color: $darkcolor;
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.menu-close {
+  cursor: pointer;
+  display: block;
+  position: absolute;
+  font-size: 14px;
+  color: $darkcolor;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  top: 20px;
+  right: 0;
+  padding:10px;
+  -webkit-transition: all .1s ease-in-out;
+  -moz-transition: all .1s ease-in-out;
+  -o-transition: all .1s ease-in-out;
+  transition: all .1s ease-in-out;
+}
+
+.menu-close:hover {
+  color: #fff;
+  -webkit-transition: all .1s ease-in-out;
+  -moz-transition: all .1s ease-in-out;
+  -o-transition: all .1s ease-in-out;
+  transition: all .1s ease-in-out;
+}
+
+/* Push the body after clicking the menu button */
+.body-push {
+  overflow-x: hidden;
+  position: relative;
+  left: 0;
+}
+
+.body-push-toright {
+  left: 200px;
+}
+
+.body-push-toleft {
+  left: -200px;
+}
+
+.menu,
+.body-push {
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+#menuToggle {
+  z-index: 20;
+  cursor: pointer;
+  -webkit-transition: all .1s ease-in-out;
+  -moz-transition: all .1s ease-in-out;
+  -o-transition: all .1s ease-in-out;
+  transition: all .1s ease-in-out;
+}
+
+#menuToggle:hover {
+  -webkit-transition: all .1s ease-in-out;
+  -moz-transition: all .1s ease-in-out;
+  -o-transition: all .1s ease-in-out;
+  transition: all .1s ease-in-out;
+}
+
+
+/* ==========================================================================
+   Background
+   ========================================================================== */
+
+#googlemaps {
+  height: 100%;
+  width: 100%;
+  position:absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+#googlemapsWithRoutes{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 0;
+  @media screen and (min-width: $break-small) {
+    width: 80%;
+    right: 0;
+  }
+}
+
+/* ==========================================================================
+   Foreground
+   ========================================================================== */
+
+.login{
+  margin: 7px;
+  border-radius: 0;
+}
+
+#element{
+  z-index: 1;
+}
+
+#headerwrap img{
+  display: block;
+  width: 85%;
+  padding: 5px;
+  margin: 15px auto;
+  @media screen and (min-width: $break-small) {
+    width: 58%;
+    padding: 0;
+  }
+}
+
+#search_bar{
+  width: 100%;
+  margin-top: 14px;
+  button{
+    border-color: $lightcolor;
+    &:hover{
+      border-color: $lightcolor;
+    }
+  }
+}
+
+#search{
+
+  z-index: 1;
+  -webkit-border-radius:24px;
+  -moz-border-radius:24px;
+  border-radius:24px;
+  height: 50px;
+  padding: 0 22px;
+  box-shadow: 0 0 5px $lightcolor;
+  &:hover{
+    box-shadow: inset 0 0 1px $darkcolor, 0 0 8px rgba(102, 175, 233, 0.75);
+  }
+  &:focus{
+    box-shadow: inset 0 0 1px $darkcolor, 0 0 8px rgba(102, 175, 233, 0.75);
+    border-color: $lightcolor;
+  }
+}
+
+.fa-search{
+  z-index: 1;
+  padding: 15px;
+  position: absolute;
+  color: $secondarycolor;
+  top: 0;
+  right: 5px;
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+
+  /* ==========================================================================
+     Footer
+     ========================================================================== */
+
+#footer {
+  position: absolute;
+  text-align: center;
+  font-size: 14px;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+  background: linear-gradient(90deg, white, gray);
+  color: $darkcolor;
+  padding: 10px;
+  box-shadow: 0 0 5px $mediumcolor;
+}
+
+#footer2 {
+  position: absolute;
+  background: $secondarycolor;
+  text-align: center;
+  font-size: 14px;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+  color: #fff;
+  padding: 10px;
+}
+
+/* ==========================================================================
+   Modal
+   ========================================================================== */
+
+.modal-dialog {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+#innerContent{
+  position: absolute;
+  margin-bottom: 50px;
+  width: 100%;
+  left:0;
+  right: 0;
+}
+.modal-header{
+  border: none;
+  .modal-title{
+    padding: 12px 0 10px 25px;
+    font-size: 20px;
+    color: $mediumcolor;
+  }
+  .close{
+    padding: 10px;
+    font-size: 32px;
+    &:active{
+      outline:none;
+    }
+  }
+}
+.modal-body{
+  a:hover{
+    text-decoration: none;
+  }
+  a:active{
+    text-decoration: none;
+  }
+  a:focus{
+    text-decoration: none;
+  }
+}
+.modal-content {
+  min-height: 100%;
+  overflow: auto;
+  border-radius: 0;
+  border: none;
+}
+.modal{
+  overflow-y: auto;
+}
+
+/* ==========================================================================
+   Other
+   ========================================================================== */
+
+.panel-default {
+  margin: 5px 5px 28px 5px;
+  font-size: 14px;
+  .panel-heading{
+    border: 1px solid $lightcolor;
+    border-radius: 7px;
+    &:hover{
+      color: #fff;
+      background-color: #333;
+    }
+  }
+}
+#bothRoutes{
+  color: #fff;
+  background-color: darken($tertiarycolor, 5%);
+  &:hover{
+    background-color: $tertiarycolor;
+  }
+}
+#amRoutes{
+  color: #fff;
+  background-color: darken($secondarycolor, 5%);
+  &:hover{
+    background-color: $secondarycolor;
+  }
+}
+#pmRoutes{
+  color: #fff;
+  background-color: darken($primarycolor, 5%);
+  &:hover{
+    background-color: $primarycolor;
+  }
+}
+
+.pullRight{
+  float: right;
+  margin: 4px;
+}
+
+.marginRight{
+  margin-right: 8px;
+}
+
+/* ==========================================================================
+   Loading Animation
+   ========================================================================== */
+
+.loading{
+  display: block;
+  width: 100%;
+  .loader{
+    display: block;
+    width: 10%;
+    margin: 5px auto;
+  }
+}
+.navbar-fixed-bottom{
+  background-color: #fff;
+  @media screen and (min-width: $break-small) {
+    box-shadow:0 0 5px $mediumcolor;
+  }
+}
+
+
+/* ==========================================================================
+   Results Page
+   ========================================================================== */
+
+.resultsNav{
+  z-index: 12;
+  background-color: #fff;
+  box-shadow:0 0 5px $mediumcolor;
+  .container{
+    width: 100%;
+  }
+}
+
+.navbar-brand{
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+  margin: 0 auto !important;
+}
+
+.navbar-brand img{
+  width: 200px;
+}
+
+#resultsPanel{
+  z-index: 10;
+  position: absolute;
+  top: 90px;
+  width: 100%;
+  height: 125px;
+  background: $secondarycolor;
+  @media screen and (min-width: $break-small) {
+    width: 20%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    box-shadow:0 0 5px $mediumcolor;
+    #results{
+      margin: 125px auto;
+    }
+  }
+}
+#reSearchPanel{
+  z-index: 10;
+  position: absolute;
+  top: 215px;
+  width: 100%;
+  height: 75px;
+  background: $secondarycolor;
+}
+
+.mobileOpenUpPanel{
+  z-index: 10;
+  position: absolute;
+  top: 290px;
+  width: 100%;
+  height: 17px;
+  transition: top .5s;
+  color: $primarycolor;
+  text-align: center;
+  background: $secondarycolor;
+  img{
+    width: 34px;
+    transition: transform .5s;
+    transform: rotate(180deg);
+    z-index: 10;
+  }
+}
+
+.mobileOpenDownPanel{
+  z-index: 10;
+  position: absolute;
+  top: 90px;
+  width: 100%;
+  height: 17px;
+  transition: top .5s;
+  color: $primarycolor;
+  text-align: center;
+  background: $secondarycolor;
+  box-shadow:0 0 5px $mediumcolor;
+  img{
+    width: 34px;
+    transition: transform .5s;
+    transform: rotate(360deg) !important;
+    z-index: 10;
+  }
+}
+
+#mobileTogglePanel span {
+  position: absolute;
+  z-index: -1;
+  cursor: pointer;
+  top: 0;
+  left: 50%;
+  width: 34px;
+  height: 34px;
+  margin-left: -17px;
+}
+
+#mobileTogglePanel span::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  content: '';
+  width: 34px;
+  height: 34px;
+  box-shadow: 0 0 0 0 rgba(255,255,255,.1);
+  border-radius: 100%;
+  opacity: 0;
+  -webkit-animation: sdb03 4s 4;
+  animation: sdb03 4s 4;
+  box-sizing: border-box;
+}
+@-webkit-keyframes sdb03 {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  60% {
+    box-shadow: 0 0 0 60px rgba(255,255,255,.1);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes sdb03 {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  60% {
+    box-shadow: 0 0 0 60px rgba(255,255,255,.1);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+#searchAgainBar{
+  margin: 12px auto;
+  width: 90%;
+  button{
+    border-color: $lightcolor;
+    &:hover{
+      border-color: $lightcolor;
+    }
+  }
+}
+
+#searchAgain{
+  -webkit-border-radius:24px;
+  -moz-border-radius:24px;
+  border-radius:24px;
+  height: 50px;
+  padding: 0 22px;
+  &:hover{
+    box-shadow: inset 0 0 1px $darkcolor, 0 0 8px rgba(102, 175, 233, 0.75);
+  }
+  &:focus{
+    box-shadow: inset 0 0 1px $darkcolor, 0 0 8px rgba(102, 175, 233, 0.75);
+    border-color: $lightcolor;
+  }
+}
+
+#results{
+  margin: 20px auto;
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  p{
+    margin: 5px auto;
+  }
+}
+
+#overlay {
+  z-index: 9;
+  background: #000;
+  height: 100%;
+  width: 100%;
+  opacity: .60;
+  top: 0;
+  left: 0;
+  position: absolute;
+  padding: 0;
+}
+
+.lower{
+  z-index:1 !important;
+  transition: .5s;
+}
+.mobileNav{
+  padding-top: 14px;
+  .navResults{
+    font-size: 14px;
+    width: 70%;
+    margin: 0 auto;
+  }
+}
+
+.pullLeft{
+  text-align: left;
+}
+#toggles {
+  z-index: 10;
+  position: absolute;
+  bottom: $size;
+  right: ($size/2.5);
+  background: transparent;
+  width: 60px;
+  display: none;
+  @media screen and (min-width: $break-small) {
+    display: block;
+  }
+}
+.toggleContainer {
+  text-align: center;
+  position: absolute;
+  margin-top: -105px;
+  width: 100%;
+  top: 0;
+}
+
+.toggle1 {
+  display: inline-block;
+  position: relative;
+  height: $size;
+  width: $size;
+  &:before {
+    border-radius: $radius;
+    background: #000;
+    position: absolute;
+    margin-left: ( $radius - $glow ) * -0.5;
+    margin-top: ( $radius - $glow ) * -0.5;
+    opacity: 0.2;
+    content: '';
+    height: $radius - $glow;
+    width: $radius - $glow;
+    left: 50%;
+    top: 50%;
+  }
+  .button {
+
+    $radius: $size * 0.688;
+
+    transition: all 300ms cubic-bezier(0.230, 1.000, 0.320, 1.000);
+    box-shadow: 0 15px 25px -4px rgba(0, 0, 0, 0.5), inset 0 -3px 4px -1px rgba(0, 0, 0, 0.2), 0 -10px 15px -1px rgba(255, 255, 255, 0.6), inset 0 3px 4px -1px rgba(255, 255, 255, 0.2), inset 0 0 5px 1px rgba(255, 255, 255, 0.8), inset 0 20px 30px 0 rgba(255, 255, 255, 0.2);
+    border-radius: $radius;
+    position: absolute;
+    background: #ccd0d4;
+    margin-left: $radius * -0.5;
+    margin-top: $radius * -0.5;
+    display: block;
+    height: $radius;
+    width: $radius;
+    left: 50%;
+    top: 50%;
+
+  }
+  .label {
+    transition: color 300ms ease-out;
+    text-shadow: 1px 1px 3px #ccd0d4, 0 0 0 rgba(0, 0, 0, 0.8), 1px 1px 4px #fff;
+    line-height: ($size - 7);
+    text-align: center;
+    position: absolute;
+    font-weight: 700;
+    font-size: 21px;
+    display: block;
+    opacity: 0.9;
+    height: 100%;
+    width: 100%;
+    color: $secondarycolor;
+  }
+  input {
+    opacity: 0;
+    position: absolute;
+    cursor: pointer;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    &:active ~ .button {
+      box-shadow: 0 15px 25px -4px rgba(0, 0, 0, 0.4), inset 0 -8px 30px 1px rgba(255, 255, 255, 0.9), 0 -10px 15px -1px rgba(255, 255, 255, 0.6), inset 0 8px 25px 0 rgba(0, 0, 0, 0.4), inset 0 0 10px 1px rgba(255, 255, 255, 0.6);
+    }
+    &:active ~ .label {
+      font-size: 20px;
+      color: darken($secondarycolor, 10%);
+    }
+    &:checked ~ .button {
+      box-shadow: 0 15px 25px -4px rgba(0, 0, 0, 0.4), inset 0 -8px 30px 1px rgba(255, 255, 255, 0.9), 0 -10px 15px -1px rgba(255, 255, 255, 0.6), inset 0 8px 25px 0 rgba(0, 0, 0, 0.4), inset 0 0 10px 1px rgba(255, 255, 255, 0.6);
+    }
+    &:checked ~ .label {
+      font-size: 20px;
+      color: darken($secondarycolor, 10%);
+    }
+  }
+}
+.toggle2 {
+  display: inline-block;
+  position: relative;
+  height: $size;
+  width: $size;
+  &:before {
+    border-radius: $radius;
+    background: #000;
+    position: absolute;
+    margin-left: ( $radius - $glow ) * -0.5;
+    margin-top: ( $radius - $glow ) * -0.5;
+    opacity: 0.2;
+    content: '';
+    height: $radius - $glow;
+    width: $radius - $glow;
+    left: 50%;
+    top: 50%;
+  }
+  .button {
+
+    $radius: $size * 0.688;
+
+    transition: all 300ms cubic-bezier(0.230, 1.000, 0.320, 1.000);
+    box-shadow: 0 15px 25px -4px rgba(0, 0, 0, 0.5), inset 0 -3px 4px -1px rgba(0, 0, 0, 0.2), 0 -10px 15px -1px rgba(255, 255, 255, 0.6), inset 0 3px 4px -1px rgba(255, 255, 255, 0.2), inset 0 0 5px 1px rgba(255, 255, 255, 0.8), inset 0 20px 30px 0 rgba(255, 255, 255, 0.2);
+    border-radius: $radius;
+    position: absolute;
+    background: #ccd0d4;
+    margin-left: $radius * -0.5;
+    margin-top: $radius * -0.5;
+    display: block;
+    height: $radius;
+    width: $radius;
+    left: 50%;
+    top: 50%;
+
+  }
+  .label {
+    transition: color 300ms ease-out;
+    text-shadow: 1px 1px 3px #ccd0d4, 0 0 0 rgba(0, 0, 0, 0.8), 1px 1px 4px #fff;
+    line-height: ($size - 7);
+    text-align: center;
+    position: absolute;
+    font-weight: 700;
+    font-size: 21px;
+    display: block;
+    opacity: 0.9;
+    height: 100%;
+    width: 100%;
+    color: $primarycolor;
+  }
+  input {
+    opacity: 0;
+    position: absolute;
+    cursor: pointer;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    &:active ~ .button {
+      box-shadow: 0 15px 25px -4px rgba(0, 0, 0, 0.4), inset 0 -8px 30px 1px rgba(255, 255, 255, 0.9), 0 -10px 15px -1px rgba(255, 255, 255, 0.6), inset 0 8px 25px 0 rgba(0, 0, 0, 0.4), inset 0 0 10px 1px rgba(255, 255, 255, 0.6);
+    }
+    &:active ~ .label {
+      font-size: 20px;
+      color: darken($primarycolor, 10%);
+    }
+    &:checked ~ .button {
+      box-shadow: 0 15px 25px -4px rgba(0, 0, 0, 0.4), inset 0 -8px 30px 1px rgba(255, 255, 255, 0.9), 0 -10px 15px -1px rgba(255, 255, 255, 0.6), inset 0 8px 25px 0 rgba(0, 0, 0, 0.4), inset 0 0 10px 1px rgba(255, 255, 255, 0.6);
+    }
+    &:checked ~ .label {
+      font-size: 20px;
+      color: darken($primarycolor, 10%);
+    }
+  }
+}
+
+

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Trapp</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles-->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+      <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!--[if lt IE 9] -->
+  </head>
+
+    <body data-spy="scroll" data-offset="0" data-target="#theMenu">
+
+
+    <nav class="navbar navbar-default">
+
+      <nav class="menu" id="theMenu">
+          <div class="menu-wrap">
+              <i class="fa fa-times menu-close"></i>
+              <div class="smoothScroll"><h1>Admin Login</h1></div>
+              <div class="input-group">
+                  <div class="tupperware">
+                      <input type="text" class="form-control login" placeholder="Username">
+                      <input type="text" class="form-control login" placeholder="Password...">
+                  </div>
+
+                  <button class="btn btn-success login">Submit</button>
+
+              </div><!-- /input-group -->
+          </div>
+
+          <!-- Menu button -->
+          <section>
+              <a id="menuToggle" class="navicon-button">
+                  <div class="navicon"></div>
+              </a>
+          </section>
+
+      </nav>
+    </nav>
+		
+	<!-- Menu -->
+
+
+	<div id="googlemaps"></div>
+
+    <div id="element">
+        <div id="headerwrap">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+
+                        <img src="img/Tranzip2.png" alt="trapp logo">
+
+                        <form class="form" id="form" role="search">
+                            <div id="search_bar" class="input-group">
+                                <input type="text" id="search" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="Type in your address here...">
+                                <i class="searchButton fa fa-lg fa-search"></i>
+                            </div>
+                        </form>
+
+
+                    </div><! --/row definition -->
+                </div><! --/row -->
+            </div><! --/container -->
+        </div><! --/headerwrap -->
+    </div>
+
+
+
+    <div class="modal fade bs-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <div class="changingHeading"><h4 class="modal-title">Which school do you go to?</h4></div>
+                    </div>
+                    <div class="container modal-body">
+                        <div class="container" id="innerContent">
+
+                            <a href="#">
+                                <div class="panel-default">
+                                    <div class="panel-heading school-submit"><i class="fa fa-graduation-cap marginRight" aria-hidden="true"></i>  William Blount High School <i class="fa fa-arrow-circle-right pullRight" aria-hidden="true"></i></div>
+                                </div>
+                            </a>
+
+                            <a href="#">
+                                <div class="panel-default">
+                                    <div class="panel-heading school-submit"><i class="fa fa-graduation-cap marginRight" aria-hidden="true"></i>  Heritage High School <i class="fa fa-arrow-circle-right pullRight" aria-hidden="true"></i></div>
+                                </div>
+                            </a>
+
+                            <a href="#">
+                                <div class="panel-default">
+                                    <div class="panel-heading school-submit"><i class="fa fa-book marginRight" aria-hidden="true"></i>  Carpenters Middle School <i class="fa fa-arrow-circle-right pullRight" aria-hidden="true"></i></div>
+                                </div>
+                            </a>
+
+                            <a href="#">
+                                <div class="panel-default">
+                                    <div class="panel-heading school-submit"><i class="fa fa-book marginRight" aria-hidden="true"></i>  Heritage Middle School <i class="fa fa-arrow-circle-right pullRight" aria-hidden="true"></i></div>
+                                </div>
+                            </a>
+
+                            <a href="#">
+                                <div class="panel-default">
+                                    <div class="panel-heading school-submit"><i class="fa fa-book marginRight" aria-hidden="true"></i>  Union Grove Middle School <i class="fa fa-arrow-circle-right left pullRight" aria-hidden="true"></i></div>
+                                </div>
+                            </a>
+
+                            <a href="#">
+                                <div class="panel-default">
+                                    <div class="panel-heading school-submit"><i class="fa fa-pencil marginRight" aria-hidden="true"></i>  Carpenters Elementary School <i class="fa fa-arrow-circle-right pullRight" aria-hidden="true"></i></div>
+                                </div>
+                            </a>
+
+                            <a href="#">
+                                <div class="panel-default">
+                                    <div class="panel-heading school-submit"><i class="fa fa-pencil marginRight"></i>  Mary Blount Elementary School <i class="fa fa-arrow-circle-right pullRight" aria-hidden="true"></i></div>
+                                </div>
+                            </a>
+
+                            <a href="#">
+                                <div class="panel-default">
+                                    <div class="panel-heading school-submit"><i class="fa fa-pencil marginRight"></i>  Fairview Elementary School <i class="fa fa-arrow-circle-right pullRight" aria-hidden="true"></i></div>
+                                </div>
+                            </a>
+
+                        </div><! --/container -->
+                    </div>
+                    <nav class="navbar-fixed-bottom">
+                        <div class="loading container">
+                            <img class="loader" src="img/default.svg">
+                        </div>
+                    </nav>
+
+
+            </div><! --/modal content -->
+        </div><! --/modal dialogue -->
+    </div><! --/modal -->
+
+
+    <div id="footer" class="navbar-fixed-bottom">
+        <h5>CodeFusion &copy; 2016</h5>
+    </div>
+
+
+
+
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+	<script src="js/main.js"></script>
+    <script type="text/javascript">
+    /* global google */
+    // The latitude and longitude of your business / place
+
+    var position = [35.845626, -86.390778];
+
+    var map;
+
+    function showGoogleMaps() {
+
+        var latLng = new google.maps.LatLng(position[0], position[1]);
+
+        var mapOptions = {
+            rotateControl: false,
+            fullscreenControl: false,
+            scrollwheel: false,
+            zoom: 8, // initialize zoom level - the max value is 21
+            navigationControl: false,
+            disableDefaultUI: true,
+            mapTypeControl: false,
+            streetViewControl: false, // hide the yellow Street View pegman
+            scaleControl: false, // allow users to zoom the Google Map
+            draggable: false,
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            center: latLng
+        };
+
+        map = new google.maps.Map(document.getElementById('googlemaps'),
+                mapOptions);
+    }
+
+    google.maps.event.addDomListener(window, 'load', showGoogleMaps);
+    </script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMEZiWzR_Oe22ml8Rl1-BNzdEG5pCJO6s&callback=showGoogleMaps">
+    </script>
+
+  </body>
+</html>
+
+
+
+
